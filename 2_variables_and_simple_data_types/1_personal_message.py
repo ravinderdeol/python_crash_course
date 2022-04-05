@@ -1,6 +1,7 @@
 # '.strip()' removes left and right whitespace
-# .title() capitalises the first letter of each word
 actor_one = " monty ".strip()
+
+# .title() capitalises the first letter of each word
 message = f"Hello {actor_one.title()}, would you like to learn some 'Python' today?"
 
 print(message)
