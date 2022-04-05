@@ -2,6 +2,7 @@
 # .title() capitalises the first letter of each word
 actor_one = " monty ".strip()
 message = f"Hello {actor_one.title()}, would you like to learn some 'Python' today?"
+
 print(message)
 
 # notes

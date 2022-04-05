@@ -1,6 +1,7 @@
 # 'FAVORITE_NUMBER' is capitalised to be treated as a constant i.e. never changed
 FAVORITE_NUMBER = 29
 message = f"my favorite number is {FAVORITE_NUMBER}"
+
 print(message)
 
 # notes
