@@ -10,7 +10,7 @@ stock_watchlist = ("GOOG", "MSFT", "AMZN", "AAPL", "TSLA", "TWTR")
 
 print("\nwatching (updated):")
 for stock in stock_watchlist:
-    print(stock)
+	print(stock)
 
 # notes
     # use a tuple when you have values you do not want to change
