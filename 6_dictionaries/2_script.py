@@ -1,7 +1,7 @@
 crypto_likes = {"bitcoin": 98,
     "ethereum": 84,
     "ripple": 72,
-                }
+    }
 
 # 'crypto_likess["bitcoin"]' gets the value of the key 'bitcoin'
 bitcoin_likes = crypto_likes["bitcoin"]

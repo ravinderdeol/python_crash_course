@@ -1,6 +1,7 @@
 # an example of a dictionary nested inside a list
 companies = [{"name": "tesla", "revenue": 53_800_000_000, "employees": 99_290},
-    {"name": "rivian", "revenue": 55_000_000, "employees": 11_500}]
+    {"name": "rivian", "revenue": 55_000_000, "employees": 11_500},
+    ]
 
 for company in companies:
     print(f"{company['name'].title()} generates {company['revenue']} with {company['employees']} employees")
