@@ -5,6 +5,7 @@ favorite_places = {"hannah": ["paris", "london"],
     }
 
 # 'name' is the key and 'place' is the value
+# 'sorted()' outputs the data in alphabetical order
 for name, place in sorted(favorite_places.items()):
 
     # 'len()' checks the length of the list and depending on the result changes the output
