@@ -11,3 +11,5 @@ for key, value in crypto_description.items():
 
 # notes
     # use of a for loop to format refines the code
+    # '.keys()' returns a list of all the keys in the dictionary
+    # '.values()' returns a list of all the values in the dictionary
