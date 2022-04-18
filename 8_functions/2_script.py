@@ -3,7 +3,7 @@ def describe_city(city, country):
     print(f"{city.title()} is in {country.title()}.")
 
 # function call using positional arguments
-describe_city('paris', 'france')
+describe_city("paris", "france")
 
 # notes
     # 'positional arguments' are when you pass the arguments in the order they are defined
