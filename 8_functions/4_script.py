@@ -1,4 +1,4 @@
-# 'none' is used in the functio as a placeholder value
+# 'none' is used in the function as a placeholder value
 def make_book(title, author, year, pages = None):
     
     book = {"title": title, "author": author, "year": year}
