@@ -25,4 +25,3 @@ print(f"Restaurant Name: {new_restaurant.name} ({new_restaurant.cuisine})")
     # the function of a course is called a method
     # everything about functions is true about classes apart from the way they are called
     # think of classes as a set of instructions for how to make an instance
-    # you can create multiple instances from a class
