@@ -13,6 +13,8 @@ class IceCreamStand(Restaurant):
 
     # inherits attributes from the parent class using the 'super' function
     def __init__(self, name, cuisine):
+
+         # initialise the attributes of the parent class
         super().__init__(name, cuisine)
 
         # new attribute to store the flavours available
