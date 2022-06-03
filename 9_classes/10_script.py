@@ -9,7 +9,5 @@ my_ice_cream.display_flavours()
 
 # notes
     # you can store classes in modules and import the classes you need
-    # write a docstring for each module that you create
-    # each class in a module should be related somehow
     # it is best not to import all classes from a module using the asterisk
     # it is best to import a specific class or import all classes use an alias
