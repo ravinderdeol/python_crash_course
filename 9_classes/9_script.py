@@ -21,7 +21,7 @@ class Privileges:
     def __init__(self, privileges = ["Can Add Post", "Can Delete Post", "Can Ban User"]):
         self.privileges = privileges
     
-    # new method to display the list of flavours
+    # new method to display the list of privileges
     def show_privileges(self):
         print(f"Privileges: {self.privileges}")
 
