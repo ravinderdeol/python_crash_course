@@ -13,7 +13,5 @@ with open(filename, "a") as file_object:
     # "w" opens a file in write mode
     # "a" opens a file in append mode
     # "r+" opens a file in read and write mode
-    # if no mode is specified python defaults to read mode
     # opening a file in write mode will overwrite the contents of the file
     # open a file in append mode to add to the end of the file
-    # any numerical data must be converted to a string before it can be written to a file
