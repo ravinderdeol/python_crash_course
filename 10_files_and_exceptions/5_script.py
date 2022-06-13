@@ -1,12 +1,11 @@
 # function to count the number of words and instances of a word in a file
 def count_words(filename):
 
-    # try-except-else block to hand an exception that may occur
     try:
         with open(filename) as f:
             contents = f.read()
 
-    # handles the file-not-found-error exception
+    # handles the 'file not found error' exception
     except FileNotFoundError:
         print(f"{filename} does not exist")
     
