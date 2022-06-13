@@ -11,11 +11,9 @@ def count_words(filename):
     
     # the else block will run if the try block does not raise an exception
     else:
-
-        # count the number of times a word appears from the list of words
-        word_one = contents.count("doublethink")
-
+        
         # count the number of times a phrase appear in the contents of the file
+        word_one = contents.count("doublethink")
         word_two = contents.count("big brother")
 
         print(f"Occurance Of Words In {filename}:\n- 'Doublethink': {word_one}~ Times\n- 'Big Brother': {word_two}~ Times")
