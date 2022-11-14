@@ -17,7 +17,7 @@ def count_words(filename):
         word_one = contents.count("doublethink")
         word_two = contents.count("big brother")
 
-        print(f"Occurance Of Words In {filename}:\n- 'Doublethink': {word_one}~ Times\n- 'Big Brother': {word_two}~ Times")
+        print(f"Occurrence Of Words In {filename}:\n- 'Doublethink': {word_one}~ Times\n- 'Big Brother': {word_two}~ Times")
 
 # pass the filename to the function in lowercase
 filename = "nineteen_eighty_four.txt".lower()
