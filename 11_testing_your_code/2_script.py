@@ -12,7 +12,7 @@ def get_formatted_location(city, country, population = ""):
         return f"{city}, {country}".title()
 
 # descriptive class name that then inherits from 'unittest.testcase'
-class NamesTestCase(unittest.TestCase):
+class LocationsTestCase(unittest.TestCase):
 
     # function to test the code in the 'get_formatted_location' function if the 'else' block triggers
     def test_city_country(self):

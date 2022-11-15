@@ -6,7 +6,7 @@ def get_formatted_location(city, country):
     return f"{city}, {country}".title()
 
 # descriptive class name that then inherits from 'unittest.testcase'
-class NamesTestCase(unittest.TestCase):
+class LocationsTestCase(unittest.TestCase):
 
     # function to test a specific aspect of the code in this case it is the formatting
     def test_city_country(self):
