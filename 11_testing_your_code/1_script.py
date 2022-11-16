@@ -31,3 +31,6 @@ if __name__ == "__main__":
     # writing test for the most critical part of the code is often good enough
     # use the word 'test' in the name of a class that is testing functions
     # and use the word 'test' in the name of a function that is testing specific parts of the code
+    # a '.' is printed for each test that passes
+    # an 'f' is printed for each test that fails
+    # a 'e' is printed for each test that raises an error
