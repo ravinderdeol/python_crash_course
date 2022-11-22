@@ -50,10 +50,6 @@ class RandomWalk:
 
 # continue making new walks while the program is active
 while True:
-
-    # make a random walk
-    # we create a random walk and store it in 'rw' making sure to call the 'fill_walk' method
-    # we can override the default number of points by passing a value to the 'RandomWalk' class
     
     # create a random walk and store it in a variable and call the method to fill the walk
     rw = RandomWalk()
