@@ -3,7 +3,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 
 # assign the name of the file to a variable
-filename = "sitka_weather_2018.csv"
+filename = "death_valley_2018.csv"
 
 # open the file and assign the resulting file object to the variable 'f'
 with open(filename) as f:
@@ -13,6 +13,10 @@ with open(filename) as f:
     
     # 'next' function returns the next line when passed the reader object in this case the header
     header_row = next(reader)
+
+    # save the index of the temp min and max to variables to avoid hard coding the index
+    tmin_index = header_row.index("TMIN")
+    tmax_index = header_row.index("TMAX")
     
     # empty list to hold the dates and high and low temperatures
     dates, highs, lows = [], [], []
@@ -23,13 +27,20 @@ with open(filename) as f:
         # convert the date information to a datetime object
         current_date = datetime.strptime(row[2], "%Y-%m-%d")
 
-        # each loop pulls the data from the index specified and converts it to an integer
-        high = int(row[5])
-        low = int(row[6])
+        # try except else block to handle missing data
+        try:
 
-        dates.append(current_date)
-        highs.append(high)
-        lows.append(low)
+            # each loop pulls the data from the index specified and converts it to an integer
+            high = int(row[tmax_index])
+            low = int(row[tmin_index])
+        
+        except ValueError:
+            print(f"missing data for {current_date}")
+        
+        else:
+            dates.append(current_date)
+            highs.append(high)
+            lows.append(low)
 
 plt.style.use("seaborn")
 fig, ax = plt.subplots()
@@ -48,7 +59,7 @@ ax.set_ylim(0, max(highs) + 10)
 ax.fill_between(dates, highs, lows, facecolor = "blue", alpha = 0.2)
 
 # specify the title of the chart and the font size
-ax.set_title("sitka daily high and low temperatures - 2018", fontsize = 24)
+ax.set_title("death valley daily high and low temperatures - 2018", fontsize = 24)
 ax.set_xlabel("", fontsize = 16)
 
 # draw the date labels diagonally to prevent them from overlapping
@@ -63,8 +74,4 @@ ax.tick_params(axis = "both", which = "major", labelsize = 16)
 plt.show()
 
 # notes
-    # data for this is at https://github.com/ehmatthes/pcc_2e/blob/master/chapter_16/the_csv_file_format/data/sitka_weather_2018_simple.csv
-    # csv files are easier for machines to read than humans 
-    # 'enumerate' function returns the index and value of each item in a list and can be used to check the index of headers
-    # ideally separate the code that generates data from the code that visualizes the data
-    # 'csv' module parses lines in a csv file
+    # data for this is at https://github.com/ehmatthes/pcc_2e/blob/master/chapter_16/the_csv_file_format/data/death_valley_2018_simple.csv
