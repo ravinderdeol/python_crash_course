@@ -18,6 +18,9 @@ with open(filename) as f:
     tmin_index = header_row.index("TMIN")
     tmax_index = header_row.index("TMAX")
     
+    # save the name of the station to a variable
+    station_name = next(reader)[header_row.index("NAME")]
+    
     # empty list to hold the dates and high and low temperatures
     dates, highs, lows = [], [], []
 
@@ -59,7 +62,7 @@ ax.set_ylim(0, max(highs) + 10)
 ax.fill_between(dates, highs, lows, facecolor = "blue", alpha = 0.2)
 
 # specify the title of the chart and the font size
-ax.set_title("death valley daily high and low temperatures - 2018", fontsize = 24)
+ax.set_title(f"{station_name.lower()} daily high and low temperatures - 2018", fontsize = 24)
 ax.set_xlabel("", fontsize = 16)
 
 # draw the date labels diagonally to prevent them from overlapping
