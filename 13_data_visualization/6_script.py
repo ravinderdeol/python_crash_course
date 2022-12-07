@@ -14,6 +14,9 @@ readable_file = "readable_eq_data.json"
 with open(readable_file, "w") as f:
     json.dump(all_eq_data, f, indent = 4)
 
+# save the title of the data set to a variable
+dataset_title = all_eq_data["metadata"]["title"]
+
 # save all of the data associated with the key 'features'
 all_eq_dicts = all_eq_data["features"]
 
@@ -49,11 +52,11 @@ data = [{
         "color": mags,
         "colorscale": "agsunset",
         "reversescale": True,
-        "colorbar": {"title": "magnitude"},
+        "colorbar": {"title": "Magnitude"},
         },
     }]
 
-my_layout = Layout(title = "global earthquakes")
+my_layout = Layout(title = f"{dataset_title}")
 
 # create a dictionary called 'fig' that contains the data and layout
 fig = {"data": data, "layout": my_layout}
