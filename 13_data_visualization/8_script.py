@@ -1,4 +1,6 @@
 from operator import itemgetter
+from plotly.graph_objs import Bar
+from plotly import offline
 import requests 
 import json
 
@@ -46,11 +48,40 @@ for submission_id in submission_ids[:30]:
 # sort the list of dictionaries by the number of comments
 submission_dicts = sorted(submission_dicts, key = itemgetter("comments"), reverse = True)
 
-# loop through the list and print the data
-for submission_dict in submission_dicts:
-    print(f"\nTitle: {submission_dict['title']}")
-    print(f"Discussion link: {submission_dict['hn_link']}")
-    print(f"Comments: {submission_dict['comments']}")
+# define the type of plot to create
+# define data on the x and y axes
+# define the hover template for each data point
+data = [{
+    "type": "bar",
+    "x": [submission_dict["title"] for submission_dict in submission_dicts],
+    "y": [submission_dict["comments"] for submission_dict in submission_dicts],
+    "hovertemplate": "<b>%{x}</b> <br>%{y} Comments",
+    "marker": {
+        "color": "rgb(171, 209, 198)",
+        "line": {"width": 1, "color": "rgb(0, 30, 29)"},
+    },
+    "opacity": 0.8,
+}]
+
+# build a dictionary with the layout specs to use instead of passing a 'layout' object to the 'plot' function
+my_layout = {
+    "title": "Most-Commented On Hacker News",
+    "titlefont": {"size": 28},
+    "xaxis": {
+        "title": "Title",
+        "titlefont": {"size": 24},
+    },
+    "yaxis": {
+        "title": "Comments",
+        "titlefont": {"size": 24},
+    },
+}
+
+# create a figure object
+fig = {"data": data, "layout": my_layout}
+
+# plot the data
+offline.plot(fig, filename = "hacker_news.html")
 
 # notes
     # documentation for the hacker news api is at https://github.com/HackerNews/API
